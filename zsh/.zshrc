@@ -89,7 +89,7 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 # Commerce Cloud
-alias cg='cd ~/dev/branch; source env.sh; cd commerce;'
+alias cg='cd ~/dev/source; env.sh; cd commerce;'
 alias sp='gradle tomcat-oracle-cc-admin -PbuildOnly=true --offline'
 
 alias shit="sudo /usr/local/McAfee/AntiMalware/VSControl stopoas"
@@ -141,8 +141,8 @@ function run() {
   startvm CloudXE;
 
   cd ~/dev/source;
-  
-  source env.sh; 
+
+  source env.sh;
 
   cd commerce;
 
