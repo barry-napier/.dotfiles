@@ -102,7 +102,7 @@
   default = upstream
 [core]
 	autocrlf = input
-  editor = vim
+	editor = nano
 	excludesfile = /Users/bnapier/.gitignore
 [advice]
   statusHints = false
@@ -118,11 +118,9 @@
 [merge]
     tool = intellij
 [mergetool "intellij"]
-    cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    cmd = idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
     trustExitCode = true
 [diff]
     tool = intellij
 [difftool "intellij"]
-	cmd = idea diff \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	  prompt = false
+    cmd = idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")

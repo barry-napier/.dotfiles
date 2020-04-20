@@ -89,7 +89,7 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 # Commerce Cloud
-alias cg='cd ~/dev/source; env.sh; cd commerce;'
+alias cg='cd ~/dev/source; source env.sh; cd commerce;'
 alias sp='gradle tomcat-oracle-cc-admin -PbuildOnly=true --offline'
 
 alias shit="sudo /usr/local/McAfee/AntiMalware/VSControl stopoas"
@@ -124,10 +124,10 @@ function runningvms() {
   VBoxManage list runningvms
 }
 
-export NO_PROXY=127.0.0.1,localhost,*.local,*.us.oracle.com,blogs.oracle.com,/var/run/docker.sock,*.oraclecorp.com,slc12krx.us.oracle.com
-export ALL_PROXY=http://www-proxy.uk.oracle.com:80
-export HTTPS_PROXY=http://www-proxy.uk.oracle.com:80
-export HTTP_PROXY=http://www-proxy.uk.oracle.com:80
+# export NO_PROXY=127.0.0.1,localhost,*.local,*.us.oracle.com,blogs.oracle.com,/var/run/docker.sock,*.oraclecorp.com,slc12krx.us.oracle.com
+# export ALL_PROXY=http://www-proxy.uk.oracle.com:80
+# export HTTPS_PROXY=http://www-proxy.uk.oracle.com:80
+# export HTTP_PROXY=http://www-proxy.uk.oracle.com:80
 
 function run() {
 
